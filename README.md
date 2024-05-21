@@ -53,3 +53,4 @@ create table reply_tb (
     foreign key (user_id) references user_tb(id)
 ) DEFAULT CHARSET=utf8mb4;
 ```
+
