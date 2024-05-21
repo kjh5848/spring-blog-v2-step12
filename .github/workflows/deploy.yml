@@ -24,3 +24,11 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew clean build
+
+      - name: deploy packging
+        run: |
+          mkdir deploy
+          cp build/libs/*.jar deploy/application.jar
+          cp Procfile deploy/Procfile
+          cp -r .ebextensions deploy/.ebextensions
+          cd deploy && zip -r deploy.zip .
